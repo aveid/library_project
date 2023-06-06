@@ -13,7 +13,7 @@ class Janr(models.Model):
 class Book(models.Model):
     title = models.CharField("Назвние книги", max_length=70)
     description = models.TextField("Описание книги")
-    image = models.ImageField("Картинка", upload_to="books")
+    image = models.ImageField("Картинка", upload_to="books", )
     publisher = models.CharField("Издание", max_length=70)
     janr = models.ForeignKey(Janr, on_delete=models.SET_NULL, null=True,
                              related_name="book_janr", verbose_name="Жанр")
